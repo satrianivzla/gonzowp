@@ -1,0 +1,525 @@
+/*
+Theme Name: Relaxed Axolotl Clone
+Theme URI: https://your-theme-uri.com/
+Author: Jules AI
+Author URI: https://your-author-uri.com/
+Description: A WordPress theme cloning the Relaxed Axolotl website.
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: responsive-layout, custom-menu, blog, one-column
+Text Domain: relaxed-axolotl-clone
+*/
+
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+1.0 Reset
+2.0 Typography
+3.0 Elements
+4.0 Forms
+5.0 Navigation
+	5.1 Links
+	5.2 Menus
+6.0 Accessibility
+7.0 Alignments
+8.0 Clearings
+9.0 Widgets
+10.0 Content
+	10.1 Posts and pages
+	10.2 Comments
+11.0 Media
+	11.1 Captions
+	11.2 Galleries
+12.0 Site Header
+13.0 Site Footer
+14.0 Front Page Sections
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+1.0 Reset
+--------------------------------------------------------------*/
+html {
+	box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+}
+
+body, h1, h2, h3, h4, h5, h6, p, ol, ul, figure, blockquote {
+	margin: 0;
+	padding: 0;
+	font-weight: normal;
+}
+
+ol, ul {
+	list-style: none;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+/*--------------------------------------------------------------
+2.0 Typography
+--------------------------------------------------------------*/
+body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+	line-height: 1.6;
+	color: #333; /* A common default text color */
+	background-color: #f0f4f8; /* Light, calming background */
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: "Georgia", serif; /* A slightly more decorative font for headings */
+	margin-bottom: 0.5em;
+	line-height: 1.3;
+	color: #102a43; /* Darker blue for headings */
+}
+
+h1 { font-size: 2.5em; }
+h2 { font-size: 2em; }
+h3 { font-size: 1.75em; }
+h4 { font-size: 1.5em; }
+h5 { font-size: 1.25em; }
+h6 { font-size: 1em; }
+
+p {
+	margin-bottom: 1em;
+}
+
+a {
+	color: #2c7a7b; /* Teal for links - calming and professional */
+	text-decoration: none;
+}
+a:hover,
+a:focus {
+	color: #1a4f50; /* Darker teal on hover */
+	text-decoration: underline;
+}
+
+/*--------------------------------------------------------------
+3.0 Elements
+--------------------------------------------------------------*/
+.container {
+	width: 90%;
+	max-width: 1200px; /* Common max-width for content */
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+hr {
+	border: 0;
+	border-top: 1px solid #ccc;
+	margin: 2em 0;
+}
+
+/*--------------------------------------------------------------
+5.0 Navigation
+--------------------------------------------------------------*/
+/* 5.2 Menus */
+.main-navigation ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.main-navigation li {
+	margin: 0 10px;
+}
+
+.main-navigation a {
+	display: block;
+	padding: 10px 5px;
+	text-decoration: none;
+	color: #102a43; /* Dark blue for nav links */
+	font-weight: 500;
+}
+.main-navigation a:hover,
+.main-navigation a:focus {
+	color: #2c7a7b; /* Teal on hover */
+	text-decoration: none;
+}
+
+.menu-toggle { /* Basic style for mobile menu button */
+	display: none; /* Hidden by default, shown in media query */
+	background: #102a43;
+	color: #fff;
+	border: none;
+	padding: 10px 15px;
+	cursor: pointer;
+}
+.menu-toggle-icon {
+	display: inline-block;
+	width: 20px;
+	height: 2px;
+	background: #fff;
+	position: relative;
+}
+.menu-toggle-icon::before,
+.menu-toggle-icon::after {
+	content: '';
+	position: absolute;
+	left: 0;
+	width: 100%;
+	height: 2px;
+	background: #fff;
+}
+.menu-toggle-icon::before { top: -6px; }
+.menu-toggle-icon::after { bottom: -6px; }
+
+
+/*--------------------------------------------------------------
+6.0 Accessibility
+--------------------------------------------------------------*/
+.screen-reader-text {
+	border: 0;
+	clip: rect(1px, 1px, 1px, 1px);
+	clip-path: inset(50%);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute !important;
+	width: 1px;
+	word-wrap: normal !important; /* Many screen reader and browser combinations announce broken words as they would appear visually. */
+}
+
+/*--------------------------------------------------------------
+12.0 Site Header
+--------------------------------------------------------------*/
+.site-header {
+	background-color: #fff; /* White header background */
+	padding: 1em 0;
+	border-bottom: 1px solid #e0e0e0; /* Subtle border */
+}
+
+.site-header .header-container {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 90%;
+	max-width: 1200px;
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+.site-branding .site-title a {
+	color: #102a43;
+	text-decoration: none;
+	font-size: 1.8em;
+	font-weight: bold;
+}
+.site-branding .site-description {
+	font-size: 0.9em;
+	color: #555;
+}
+.custom-logo-link img {
+	max-height: 60px; /* Adjust as needed */
+	width: auto;
+}
+
+/*--------------------------------------------------------------
+13.0 Site Footer
+--------------------------------------------------------------*/
+.site-footer {
+	background-color: #102a43; /* Dark blue footer */
+	color: #f0f4f8; /* Light text color for footer */
+	padding: 3em 0;
+	font-size: 0.9em;
+}
+
+.site-footer .footer-container {
+	width: 90%;
+	max-width: 1200px;
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: 15px;
+	padding-right: 15px;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+	gap: 2em;
+}
+
+.site-footer .footer-branding .footer-logo img {
+	max-height: 50px; /* Adjust as needed */
+	margin-bottom: 0.5em;
+}
+.site-footer .footer-branding .footer-site-title a {
+	color: #fff;
+	text-decoration: none;
+	font-size: 1.5em;
+	font-weight: bold;
+	margin-bottom: 0.5em;
+	display: inline-block;
+}
+.site-footer .footer-branding .footer-description {
+	font-size: 0.95em;
+	line-height: 1.5;
+	color: #b0bec5; /* Lighter shade for description */
+}
+
+.site-footer h4 {
+	color: #fff;
+	margin-bottom: 1em;
+	font-size: 1.1em;
+}
+
+.site-footer .footer-navigation {
+	display: grid;
+	grid-template-columns: 1fr 1fr; /* Quick links and Connect links side by side */
+	gap: 2em;
+}
+
+.site-footer ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.site-footer ul li a {
+	color: #b0bec5; /* Lighter text for links */
+	text-decoration: none;
+	padding: 0.3em 0;
+	display: inline-block;
+}
+.site-footer ul li a:hover,
+.site-footer ul li a:focus {
+	color: #fff;
+	text-decoration: underline;
+}
+
+.site-footer .footer-legal {
+	grid-column: 1 / -1; /* Span full width on next row if needed */
+	text-align: center;
+	padding-top: 2em;
+	border-top: 1px solid #3b5266; /* Separator line */
+	margin-top: 1em;
+}
+.site-footer .footer-legal p.copyright {
+	margin-bottom: 0.5em;
+	color: #b0bec5;
+}
+.site-footer .footer-legal-nav a {
+	color: #b0bec5;
+	margin: 0 0.5em;
+	text-decoration: none;
+}
+.site-footer .footer-legal-nav a:hover,
+.site-footer .footer-legal-nav a:focus {
+	color: #fff;
+	text-decoration: underline;
+}
+
+
+/*--------------------------------------------------------------
+14.0 Front Page Sections
+--------------------------------------------------------------*/
+.front-page-section {
+	padding: 3em 0;
+}
+.front-page-section:nth-child(odd) { /* Alternate background colors for sections */
+	background-color: #fff;
+}
+.front-page-section:nth-child(even) {
+	background-color: #f8fafc; /* Slightly off-white for even sections */
+}
+
+.front-page-section h2 {
+	text-align: center;
+	margin-bottom: 1.5em;
+	font-size: 2.2em;
+}
+.front-page-section p {
+	text-align: center;
+	max-width: 700px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 1.5em;
+	color: #4a5568; /* Softer text color for section descriptions */
+}
+
+.front-page-section .button,
+.button { /* General button styles */
+	display: inline-block;
+	background-color: #2c7a7b; /* Teal */
+	color: #fff;
+	padding: 12px 25px;
+	border-radius: 5px;
+	text-decoration: none;
+	font-weight: 500;
+	transition: background-color 0.3s ease;
+	border: none;
+	cursor: pointer;
+	text-align: center;
+}
+.front-page-section .button:hover,
+.button:hover {
+	background-color: #1a4f50; /* Darker teal */
+	color: #fff;
+	text-decoration: none;
+}
+
+/* Hero Section Specifics */
+.hero-section {
+	text-align: center;
+	padding: 4em 0;
+	background-color: #e0f2f1; /* Very light teal background for hero */
+}
+.hero-section h2 {
+	font-size: 2.8em; /* Larger for hero heading */
+	color: #083344; /* Darker, prominent color */
+}
+.hero-section p {
+	font-size: 1.15em;
+	margin-bottom: 2em;
+}
+.hero-section .button {
+	margin: 0 0.5em;
+}
+
+/* Blog Section Specifics */
+.blog-section .posts-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	gap: 2em;
+	margin-bottom: 2em;
+}
+.post-excerpt {
+	background-color: #fff;
+	border: 1px solid #e2e8f0;
+	border-radius: 8px;
+	padding: 1.5em;
+	box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+.post-excerpt .entry-title a {
+	color: #102a43;
+}
+.post-excerpt .entry-title a:hover {
+	color: #2c7a7b;
+}
+.post-excerpt .entry-meta {
+	font-size: 0.85em;
+	color: #718096;
+	margin-bottom: 1em;
+}
+.post-excerpt .post-thumbnail img {
+	border-radius: 4px;
+	margin-bottom: 1em;
+}
+.post-excerpt .entry-summary p:last-child {
+	margin-bottom: 0;
+}
+.post-excerpt .read-more {
+	display: inline-block;
+	margin-top: 1em;
+	font-weight: 500;
+}
+
+/* Videos Section Specifics */
+.videos-section .videos-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	gap: 2em;
+	margin-bottom: 2em;
+}
+.video-item { /* Style for individual video containers if needed */
+	background-color: #fff;
+	border: 1px solid #e2e8f0;
+	border-radius: 8px;
+	padding: 1.5em;
+	box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+.video-item .entry-title a {
+	color: #102a43;
+}
+.video-item .entry-title a:hover {
+	color: #2c7a7b;
+}
+.video-item .entry-content iframe { /* Ensure embeds are responsive */
+    max-width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9; /* Common video aspect ratio */
+}
+
+
+/* Button wrapper for centering */
+.button-center-wrapper {
+    text-align: center;
+    margin-top: 2em;
+}
+.button-center-wrapper.mt-1 { margin-top: 1em; }
+
+
+/* Content specific styles */
+.page-header {
+    margin-bottom: 2em;
+    padding-bottom: 1em;
+    border-bottom: 1px solid #e0e0e0;
+}
+.page-header .page-title {
+    font-size: 2.5em;
+}
+.archive-description {
+    font-size: 1.1em;
+    color: #555;
+}
+
+/* Media Queries for responsiveness */
+@media (max-width: 768px) {
+	.site-header .header-container {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+	.main-navigation {
+		width: 100%;
+		margin-top: 1em;
+	}
+	.main-navigation ul {
+		display: none; /* Hide menu by default on small screens */
+		flex-direction: column;
+		width: 100%;
+	}
+	.main-navigation ul.toggled-on { /* Class added by JS to show menu */
+		display: flex;
+	}
+	.main-navigation li {
+		margin: 0;
+		width: 100%;
+	}
+	.main-navigation a {
+		padding: 10px 15px;
+		border-bottom: 1px solid #e0e0e0;
+	}
+	.menu-toggle {
+		display: block; /* Show mobile menu button */
+		align-self: flex-end; /* Position button to the right if header is column */
+	}
+
+	.site-footer .footer-container,
+	.site-footer .footer-navigation {
+		grid-template-columns: 1fr; /* Stack footer columns */
+		text-align: center;
+	}
+	.site-footer .footer-branding,
+	.site-footer .quick-links,
+	.site-footer .connect-links	{
+		margin-bottom: 1.5em;
+	}
+    .site-footer h4 {
+        margin-top: 1em; /* Add some space above headings when stacked */
+    }
+	.site-footer .footer-legal {
+		margin-top: 1em;
+		padding-top: 1em;
+	}
+}
